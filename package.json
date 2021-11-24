@@ -6,8 +6,13 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^4.6.1",
+    "firebase": "^7.22.1-alpha.96ae6a5fe",
     "react": "^17.0.2",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^17.0.2",
+    "react-router": "^6.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
