@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Hero from '../Home/Hero';
 import './Auth.css';
 import { useAuth } from './useAuth';
 import { WebsiteName } from '../../App';
@@ -9,7 +8,7 @@ const Entry = () => {
     document.title = "Account | " + WebsiteName;
     const auth = useAuth();
 
-    const [user, setUser] = useState({ name: '', email: '', password: '', phone: '', isValid: false, error: '' });
+    const [user, setUser] = useState({ name: '', email: '', password: '', phone: '', isValid: false, error: ''});
 
     // Input check
     const isValidName = email => /^[a-zA-Z ]{2,30}$/.test(email);
@@ -69,7 +68,8 @@ const Entry = () => {
     // Register Account
     const registerAccount = e => {
         if (user.isValid) {
-            auth.createUserWithEmail(user.name, user.email, user.password,).then(res => {
+            auth.createUserWithEmail(user.name, user.email, user.password).then(res => {
+                localStorage.setItem('user', JSON.stringify({"email": user.email, "displayName": user.name}))
                 if (res.email) window.location.pathname = '/';
             });
         } else {
@@ -106,24 +106,6 @@ const Entry = () => {
         });
         e.preventDefault();
     }
-
-
-    // Github Sign In
-    const githubSignIn = (e) => {
-        auth.signInWithGithub().then(res => {
-            if (res.displayName) window.location.pathname = '/';
-        });
-        e.preventDefault();
-    }
-
-    // Yahoo Sign In
-    const yahooSignIn = (e) => {
-        auth.signInWithYahoo().then(res => {
-            if (res.email) window.location.pathname = '/';
-        });
-        e.preventDefault();
-    }
-
     // Sign Out
     const signOut = () => {
         auth.signOut().then(res => {
@@ -143,7 +125,6 @@ const Entry = () => {
 
     return (
         <section className="flexCenter user">
-            <Hero title="Account" />
             {
                 auth.user ?
                     <div className="userSignedIn">
@@ -174,8 +155,6 @@ const Entry = () => {
                                 <h2>Login with social networks </h2>
                                 <button onClick={facebookSignIn} className="facebookBtn"><i className="fa fa-facebook"></i>Facebook</button>
                                 <button onClick={googleSignIn} className="googleBtn "> <i className="fa fa-google"></i>Google</button>
-                                <button onClick={githubSignIn} className="githubBtn"> <i className="fa fa-github"></i>Github</button>
-                                <button onClick={yahooSignIn} className="yahooBtn"> <i className="fa fa-yahoo"></i>Yahoo</button>
                             </div>{/* Login Social Networks */}
 
                             <div className="formSubmission col-md-6">

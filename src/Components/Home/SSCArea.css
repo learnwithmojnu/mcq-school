@@ -1,0 +1,23 @@
+.sscArea {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.sscArea h2{
+    border: 2px dashed red;
+    width: 90px;
+    padding: 1%;
+    margin: 0 auto;
+}
+
+.subject-chemistry h3 {
+    margin-top: 30px;
+    padding-bottom: 3px;
+    border-bottom: 2px dotted black;
+}
+
+.subject-chemistry a {
+    margin-top: 5px;
+    padding-bottom: 3px;
+    font-size: 1.3em;
+}

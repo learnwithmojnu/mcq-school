@@ -51,7 +51,9 @@ const SC3 = () => {
 
     return (
         <div>
-        <Hero title="Let's Start Exam 🙋" />
+        <div className="text-center mt-5">
+            <Hero title="Let's Start Exam"/>
+        </div>
         <div className="quizWrapper">
             {
                 auth.user ?

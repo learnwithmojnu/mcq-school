@@ -3,7 +3,7 @@ import ProfileScore from './ProfileScore/ProfileScore';
 
 const Score = () => {
     const [scores, setScores] = useState([]);
-     const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem('user')) || '';
     useEffect(() => {
          fetch('https://aqueous-peak-84384.herokuapp.com/selfScores?email='+ user.email, {
             method: 'GET',

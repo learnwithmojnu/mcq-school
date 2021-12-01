@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <div className="container">
             <header className="header">
-                <h2 className="logo"><Link to="/">MCQ Exam</Link></h2>
+                <h2 className="logo"><Link to="/">MCQ SCHOOL</Link></h2>
 
                 <nav className="navbar">
                     <ul className="navbarMenu">

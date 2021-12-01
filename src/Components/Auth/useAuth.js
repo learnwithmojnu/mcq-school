@@ -89,31 +89,6 @@ const Auth = () => {
         });
     }
 
-    // Sign In With Github
-    const signInWithGithub = () => {
-        const githubProvider = new firebase.auth.GithubAuthProvider();
-        return firebase.auth().signInWithPopup(githubProvider).then(res => {
-            setUser(getUser(res.user));
-            return res.user;
-        }).catch(err => {
-            setError(err.message);
-            return err.message;
-        });
-    }
-
-    // Sign In With Yahoo
-    const signInWithYahoo = () => {
-        const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-        return firebase.auth().signInWithPopup(yahooProvider).then(res => {
-            setUser(getUser(res.user));
-            return res.user;
-        }).catch(err => {
-            setError(err.message);
-            return err.message;
-        });
-    }
-
-
     // Sign Out
     const signOut = () => {
         return firebase.auth().signOut().then(res => {
@@ -134,6 +109,6 @@ const Auth = () => {
         });
     }, []);
 
-    return { user, error, createUserWithEmail, signInWithEmail, signInWithGoogle, signInWithFacebook, signInWithGithub, signInWithYahoo, signOut }
+    return { user, error, createUserWithEmail, signInWithEmail, signInWithGoogle, signInWithFacebook, signOut }
 }
 export default Auth;

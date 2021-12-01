@@ -67,7 +67,6 @@
 .signArea h2{
     margin-bottom: 25px;
     font-size: 20px;
-    font-incorrect_answers: 700;
 }
 
 /* Sign In with */
@@ -138,7 +137,6 @@
     border: none;
     outline: none;
     cursor: pointer;
-    font-incorrect_answers: 600;
     padding: 10px 30px;
     display: inline-block;
     background-color: #FFB606;

@@ -12,11 +12,10 @@ import AddQuestion from './Components/AddQuestion/AddQuestion';
 import ManageQuestion from './Components/ManageQuestion/ManageQuestion';
 import Score from './Components/Score/Score';
 import LeaderBoard from './Components/LeaderBoard/LeaderBoard';
-import PBGS9 from './Components/PBGS9/PBGS9';
 import SC3 from './Components/SSC/Chemistry/SC3/SC3';
-import PB10 from './Components/Primary/Bangla/PB10/PB10';
 import SC2 from './Components/SSC/Chemistry/SC2/SC2';
-export const WebsiteName = "Onnorokom School";
+import Login from './Components/Login/Login';
+export const WebsiteName = "MCQ School";
 
 function App() {
   return (
@@ -28,6 +27,9 @@ function App() {
             <Switch>
               <Route path='/entry'>
                 <Entry />
+              </Route>
+              <Route path='/login'>
+                <Login/>
               </Route>
               <Route path='/quiz'>
                 <Quiz />
@@ -44,17 +46,11 @@ function App() {
               <Route path='/ManageQuestion'>
                 <ManageQuestion />
               </Route>
-              <Route path='/PBGS9'>
-                <PBGS9/>
-              </Route>
               <Route path='/SC2'>
                 <SC2/>
               </Route>
               <Route path='/SC3'>
                 <SC3/>
-              </Route>
-              <Route path='/PB10'>
-                <PB10/>
               </Route>
               <Route exact path='/'>
                 <Home />

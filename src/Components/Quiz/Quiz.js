@@ -10,8 +10,8 @@ const Quiz = () => {
     document.title = WebsiteName;
     const auth = Auth();
     const user = JSON.parse(localStorage.getItem('user'));
-    if(user){
-    var {displayName, email, photoURL} = user;
+    if (user) {
+        var { displayName, email, photoURL } = user;
     }
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,21 +40,23 @@ const Quiz = () => {
     }
     const handleSaveScore = () => {
         const newScore = { displayName, email, photoURL, score };
-         fetch('https://aqueous-peak-84384.herokuapp.com/score', {
+        fetch('https://aqueous-peak-84384.herokuapp.com/score', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newScore)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
         alert('Success, Go to leader board');
     }
 
     return (
         <>
-            <Hero title="Let's Start Quiz 🙋" />
+            <div className="text-center">
+                <Hero title="Let's Start Exam" />
+            </div>
             <div className="quizWrapper">
                 {
                     auth.user ?
@@ -64,12 +66,12 @@ const Quiz = () => {
                                     <div>
                                         <h6 className="mb-3"><strong>Game Ended !!! Your Score is:</strong> {score}</h6>
                                         <button className="btn btn-secondary" onClick={handleSaveScore}>Save Your Score</button>
-                                        <br/>
-                                        <br/>
+                                        <br />
+                                        <br />
                                         <button className="btn"><a href="/quiz">Restart Quiz</a></button>
                                     </div>
                                 ) : (<Questionnaire data={questions[currentIndex]} handleAnswer={handleAnswer} showAnswer={showAnswer} nextQuestion={nextQuestion} />
-                                    ) : (<p className="text-center">Loading...</p>)
+                                ) : (<p className="text-center">Loading...</p>)
                             }
                         </div> :
                         <div>

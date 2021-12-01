@@ -1,7 +1,5 @@
 import React from 'react';
-import AddQuestion from '../AddQuestion/AddQuestion';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
-import ManageQuestion from '../ManageQuestion/ManageQuestion';
 
 const Admin = () => {
     return (

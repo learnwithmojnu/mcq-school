@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyB33ma08XxeLTZLpEHkOAK1piSCVL0r5eU",
-  authDomain: "onnorokom-school.firebaseapp.com",
-  projectId: "onnorokom-school",
-  storageBucket: "onnorokom-school.appspot.com",
-  messagingSenderId: "9669148918",
-  appId: "1:9669148918:web:eece6eab6dea8041fa6cd7",
-  measurementId: "G-YSB4V1TNG7"
+  apiKey: "AIzaSyCF5BieQLeONdCTpnopsoUH35S6qPM7qNk",
+  authDomain: "mc-school.firebaseapp.com",
+  projectId: "mc-school",
+  storageBucket: "mc-school.appspot.com",
+  messagingSenderId: "717071012206",
+  appId: "1:717071012206:web:15ee248db886d85863b17f",
+  measurementId: "G-BWYMMSMB8S"
 };
 
 export default firebaseConfig;
